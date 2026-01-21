@@ -138,7 +138,10 @@ export default function WelcomeCards() {
         {/* CARD 1 */}
         <Card
           className="col-span-1"
-          icon={<FileText size={14} className="text-white text-[18px] " />}
+          icon={<FileText size={14} className="text-white  w-4 h-4        /* mobile */
+    md:w-5 md:h-5 /* tablet */
+    lg:w-6 lg:h-6 /* desktop */
+    xl:w-5 xl:h-7 /* large screens */ " />}
           color="bg-blue-500"
           text={
             <>
@@ -192,7 +195,7 @@ function Card({ icon, text, color, className = "" }) {
         xl:w-[260px]
 
        min-h-[100px]
-        xl:h-[120px]
+        xl:h-[125px]
 
         bg-[#363636]
         border
@@ -211,8 +214,8 @@ function Card({ icon, text, color, className = "" }) {
       {/* ICON */}
       <div
         className={`
-          w-9
-          h-9
+          w-8
+          h-8
           
 
           rounded-md
@@ -228,10 +231,10 @@ function Card({ icon, text, color, className = "" }) {
       {/* TEXT */}
       <p
         className="
-          mt-6
-          text-[12px]
-          xl:text-[13px]
-          leading-[18px]
+          mt-4
+          text-[10px]
+          xl:text-[12px]
+          leading-[17px]
           text-[#E5E5E5]
         "
       >
