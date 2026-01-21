@@ -1,30 +1,50 @@
 
-
-
-
-
-
 // import { FileText, BarChart2, AlignLeft } from "lucide-react";
 
 // export default function WelcomeCards() {
 //   return (
-//     <div className="flex gap-5 mt-4"> {/* mt-6 → mt-4 (cards moved UP) */}
+    
+//     <div
+//   className="
+//     w-full
+//     max-w-[1080px]
+//     xl:max-w-[1500px]
+//     mx-auto
+//     flex
+//     flex-wrap
+//     lg:flex-nowrap
+//     justify-center
+//     gap-6
+//     px-6
+//     lg:px-0
+//     mt-1
+//     min-w-0
+//   "
+// >
+
 //       <Card
-//         icon={<FileText size={14} />}
+//         icon={<FileText size={14} className="text-white"/>}
 //         color="bg-blue-500"
-//         text="Help Me To Create A Personal Branding And Web Page"
+//         // text="Help Me To Create A Personal Branding And Web Page"
+//         text={
+//   <>
+//     Help Me To Create A Personal Branding 
+//     And Web Page
+//   </>
+// }
+
 //       />
 
 //       <Card
-//         icon={<BarChart2 size={14} />}
-//         color="bg-pink-500"
-//         text="Write A Report Based On My Website Data"
+//         icon={<BarChart2 size={14} className="text-white" />}
+//         color="bg-pink-500"        
+//         text={<>Write A Report Based On My <br/> Website Data</>}
 //       />
 
 //       <Card
-//         icon={<AlignLeft size={14} />}
+//         icon={<AlignLeft size={14} className="text-white"/>}
 //         color="bg-orange-400"
-//         text="Write A Tailored, Engaging Content, With A Focus Quality"
+//         text={<>Write A Tailored, Engaging <br/>Content, With A Focus Quality</>}
 //       />
 //     </div>
 //   );
@@ -34,23 +54,31 @@
 //   return (
 //     <div
 //       className="
-//         w-[260px]
-//         h-[115px]        /* slight height reduction */
-//         bg-[#3A3A3A]
-//         rounded-xl
-//         p-4
-//         flex
+//         w-[248px]
+//         xl:w-[260px]
+//         h-[110px]
+//         xl:h-[125px]
+//         bg-[#363636]
+//         border
+//         border-white/10
+//         rounded-[16px]
+//         px-5
+//         py-4
 //         flex-col
-//         gap-3
+        
 //         transition
+//         border
 //         hover:bg-[#404040]
 //       "
-//     >
+
+// >
+
+    
 //       {/* ICON */}
 //       <div
 //         className={`
 //           w-7
-//           h-7              /* icon container smaller */
+//           h-7
 //           rounded-md
 //           ${color}
 //           flex
@@ -62,94 +90,131 @@
 //       </div>
 
 //       {/* TEXT */}
-//       <p className="text-[12.5px] leading-[17px] text-gray-300 mt-[2px]">
+//       <p
+//         className="
+//           mt-6
+//           text-[12px]
+//           xl:text-[13px]
+//           leading-[18px]
+//           text-[#E5E5E5]
+//         "
+//       >
 //         {text}
 //       </p>
 //     </div>
 //   );
 // }
 
-
 import { FileText, BarChart2, AlignLeft } from "lucide-react";
 
 export default function WelcomeCards() {
   return (
-    
     <div
-  className="
-    w-full
-    max-w-[1080px]
-    xl:max-w-[1500px]
-    mx-auto
-    flex
-    flex-wrap
-    lg:flex-nowrap
-    justify-center
-    gap-6
-    px-6
-    lg:px-0
-    mt-1
-    min-w-0
-  "
->
+      className="
+        w-full
+        max-w-[1080px]
+        xl:max-w-[1500px]
+        mx-auto
+        px-6
+        lg:px-0
+        mt-1
+      "
+    >
+      {/* GRID ONLY FOR MOBILE */}
+      <div
+        className="
+          grid
+          grid-cols-2
+          gap-4
 
-      <Card
-        icon={<FileText size={14} className="text-white"/>}
-        color="bg-blue-500"
-        // text="Help Me To Create A Personal Branding And Web Page"
-        text={
-  <>
-    Help Me To Create A Personal Branding 
-    And Web Page
-  </>
-}
+          md:flex
+          md:flex-wrap
+          md:justify-center
+          md:gap-6
 
-      />
+          lg:flex-nowrap
+        "
+      >
+        {/* CARD 1 */}
+        <Card
+          className="col-span-1"
+          icon={<FileText size={14} className="text-white text-[18px] " />}
+          color="bg-blue-500"
+          text={
+            <>
+              Help Me To Create A Personal Branding
+              <br />
+              And Web Page
+            </>
+          }
+        />
 
-      <Card
-        icon={<BarChart2 size={14} className="text-white" />}
-        color="bg-pink-500"        
-        text={<>Write A Report Based On My <br/> Website Data</>}
-      />
+        {/* CARD 2 */}
+        <Card
+          className="col-span-1"
+          icon={<BarChart2 size={14} className="text-white text-[18px] " />}
+          color="bg-pink-500"
+          text={
+            <>
+              Write A Report Based On My
+              <br />
+              Website Data
+            </>
+          }
+        />
 
-      <Card
-        icon={<AlignLeft size={14} className="text-white"/>}
-        color="bg-orange-400"
-        text={<>Write A Tailored, Engaging <br/>Content, With A Focus Quality</>}
-      />
+        {/* CARD 3 — FULL WIDTH ON MOBILE */}
+        <Card
+          className="col-span-2"
+          icon={<AlignLeft size={14} className="text-white text-[18px] " />}
+          color="bg-orange-400"
+          text={
+            <>
+              Write A Tailored, Engaging
+              <br />
+              Content, With A Focus Quality
+            </>
+          }
+        />
+      </div>
     </div>
   );
 }
 
-function Card({ icon, text, color }) {
+function Card({ icon, text, color, className = "" }) {
   return (
     <div
-      className="
-        w-[248px]
+      className={`
+        ${className}
+
+        w-full
+        md:w-[248px]
         xl:w-[260px]
-        h-[110px]
-        xl:h-[125px]
+
+       min-h-[100px]
+        xl:h-[120px]
+
         bg-[#363636]
         border
         border-white/10
         rounded-[16px]
         px-5
         py-4
+
+        flex
         flex-col
-        
+
         transition
-        border
         hover:bg-[#404040]
-      "
-
->
-
-    
+      `}
+    >
       {/* ICON */}
       <div
         className={`
-          w-7
-          h-7
+          w-9
+          h-9
+          
+
           rounded-md
           ${color}
           flex
@@ -175,4 +240,3 @@ function Card({ icon, text, color }) {
     </div>
   );
 }
-
